@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tactical Viewer</title>
+<style>
+:root{--bg:#10151c;--panel:#1a222d;--ink:#e8edf3;--mute:#8b98a8;--home:#ff5a5f;--away:#4da3ff;--accent:#ffd166}
+@media (prefers-color-scheme: light){:root{--bg:#eef1f5;--panel:#fff;--ink:#1b2430;--mute:#5d6b7c}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 -apple-system,system-ui,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+h1{font-size:18px;margin:0 0 4px}.sub{color:var(--mute);font-size:12px;margin-bottom:12px}
+canvas{width:100%;height:auto;background:#2f8f4e;border-radius:10px;display:block;touch-action:none}
+.bar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:var(--panel);padding:10px 12px;border-radius:10px;margin-top:10px}
+.bar label{display:flex;gap:6px;align-items:center;cursor:pointer;user-select:none}
+button{background:var(--accent);color:#1b2430;border:0;border-radius:7px;padding:6px 12px;font-weight:600;cursor:pointer}
+input[type=range]{flex:1;min-width:180px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.card{background:var(--panel);border-radius:10px;padding:10px 12px}.card b{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+.card .v{font-size:13px;margin-top:4px;font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+#drop{margin-top:10px;color:var(--mute);font-size:12px}
+</style></head><body><div class="wrap">
+<h1>Tactical Viewer</h1>
+<div class="sub" id="src"></div>
+<canvas id="c" width="1050" height="680"></canvas>
+<div class="bar">
+  <button id="play">Pause</button>
+  <label>Speed <select id="spd"><option>0.5</option><option selected>1</option><option>2</option><option>4</option></select></label>
+  <input id="seek" type="range" min="0" max="1" value="0" step="1">
+  <span id="clock" style="font-variant-numeric:tabular-nums;min-width:70px"></span>
+</div>
+<div class="bar">
+  <label><input type="checkbox" id="oLine" checked>Defensive lines</label>
+  <label><input type="checkbox" id="oHull" checked>Team shape (hull)</label>
+  <label><input type="checkbox" id="oVel">Velocity</label>
+  <label><input type="checkbox" id="oLane" checked>Passing lanes</label>
+  <label><input type="checkbox" id="oNum" checked>Numbers</label>
+  <label><input type="checkbox" id="oTrail" checked>Ball trail</label>
+</div>
+<div class="stats">
+  <div class="card"><b><span class="dot" style="background:var(--home)"></span>Home shape</b><div class="v" id="sh"></div></div>
+  <div class="card"><b><span class="dot" style="background:var(--away)"></span>Away shape</b><div class="v" id="sa"></div></div>
+  <div class="card"><b>Possession / ball</b><div class="v" id="sb"></div></div>
+</div>
+<div id="drop">Drop a normalised tracking file (<code>.json</code> / <code>.json.gz</code>) anywhere on the page to load it. Source and licence are shown above; nothing leaves your machine.</div>
+</div>
+<script>
+const DATA = /*DATA*/null;
+let D = DATA, i = 0, playing = true, last = 0, acc = 0;
+const cv = document.getElementById('c'), g = cv.getContext('2d');
+const PAD = 25, PW = 105, PH = 68, S = (cv.width - 2*PAD) / PW;
+const X = x => PAD + (x + PW/2) * S, Y = y => PAD + (PH/2 - y) * S;
+const $ = id => document.getElementById(id), on = id => $(id).checked;
+function setData(d){D=d;i=0;$('seek').max=d.frames.length-1;$('seek').value=0;
+  $('src').textContent=d.meta.source+' · match '+d.meta.match_id+' · '+d.meta.hz+' Hz · licence: '+d.meta.license;draw()}
+function hull(pts){pts=pts.slice().sort((a,b)=>a[0]-b[0]||a[1]-b[1]);if(pts.length<3)return pts;const cr=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
+  const lo=[],up=[];for(const p of pts){while(lo.length>=2&&cr(lo[lo.length-2],lo[lo.length-1],p)<=0)lo.pop();lo.push(p)}
+  for(const p of pts.slice().reverse()){while(up.length>=2&&cr(up[up.length-2],up[up.length-1],p)<=0)up.pop();up.push(p)}return lo.slice(0,-1).concat(up.slice(0,-1))}
+function area(h){let s=0;for(let k=0;k<h.length;k++){const a=h[k],b=h[(k+1)%h.length];s+=a[0]*b[1]-b[0]*a[1]}return Math.abs(s)/2}
+function dirOf(f,side){const d=D.meta.dir[f.p]||1;return side==='h'?d:-d}
+function kmeans3(xs){xs=xs.slice().sort((a,b)=>a-b);let c=[xs[1],xs[xs.length>>1],xs[xs.length-2]];
+  for(let it=0;it<20;it++){const gr=[[],[],[]];for(const x of xs)gr[[0,1,2].reduce((m,k)=>Math.abs(x-c[k])<Math.abs(x-c[m])?k:m,0)].push(x);c=gr.map((a,k)=>a.length?a.reduce((s,v)=>s+v,0)/a.length:c[k])}
+  const n=[0,0,0];for(const x of xs)n[[0,1,2].reduce((m,k)=>Math.abs(x-c[k])<Math.abs(x-c[m])?k:m,0)]++;return n}
+function shape(f,side){const d=dirOf(f,side),pl=f[side];if(pl.length<10)return null;
+  const p=pl.map(q=>[q[1]*d,q[2]*d,q[1],q[2],q[0]]).sort((a,b)=>a[0]-b[0]);const out=p.slice(1);
+  const xs=out.map(q=>q[0]),ys=out.map(q=>q[1]).sort((a,b)=>a-b),xsS=xs.slice().sort((a,b)=>a-b);
+  const q=(a,t)=>a[Math.round(t*(a.length-1))];
+  return {out,gk:p[0],defLine:xsS.slice(0,4).reduce((s,v)=>s+v,0)/4,len:q(xsS,.9)-q(xsS,.1),wid:q(ys,.9)-q(ys,.1),area:area(hull(out.map(o=>[o[2],o[3]]))),form:kmeans3(xs).join('-'),d}}
+function draw(){const f=D.frames[i];g.clearRect(0,0,cv.width,cv.height);
+  g.fillStyle='#2f8f4e';g.fillRect(0,0,cv.width,cv.height);
+  for(let k=0;k<20;k++){g.fillStyle=k%2?'#2c8a4a':'#33944f';g.fillRect(X(-52.5+k*5.25),Y(34),5.25*S,PH*S)}
+  g.strokeStyle='rgba(255,255,255,.85)';g.lineWidth=1.5;g.strokeRect(X(-52.5),Y(34),PW*S,PH*S);
+  g.beginPath();g.moveTo(X(0),Y(34));g.lineTo(X(0),Y(-34));g.stroke();g.beginPath();g.arc(X(0),Y(0),9.15*S,0,7);g.stroke();
+  for(const s of[-1,1]){g.strokeRect(X(s>0?52.5-16.5:-52.5),Y(20.16),16.5*S,40.32*S);g.strokeRect(X(s>0?52.5-5.5:-52.5),Y(9.16),5.5*S,18.32*S)}
+  const sh={h:shape(f,'h'),a:shape(f,'a')},col={h:'#ff5a5f',a:'#4da3ff'};
+  for(const side of['h','a']){const s=sh[side];if(!s)continue;
+    if(on('oHull')){const h=hull(s.out.map(o=>[o[2],o[3]]));g.fillStyle=col[side]+'22';g.strokeStyle=col[side]+'aa';g.beginPath();h.forEach((p,k)=>k?g.lineTo(X(p[0]),Y(p[1])):g.moveTo(X(p[0]),Y(p[1])));g.closePath();g.fill();g.stroke()}
+    if(on('oLine')){const x=s.defLine*s.d;g.setLineDash([6,5]);g.strokeStyle=col[side];g.lineWidth=2;g.beginPath();g.moveTo(X(x),Y(34));g.lineTo(X(x),Y(-34));g.stroke();g.setLineDash([])}}
+  // ball trail
+  if(on('oTrail')){g.strokeStyle='rgba(255,255,255,.7)';g.lineWidth=1.5;g.beginPath();let st=false;for(let k=Math.max(0,i-25);k<=i;k++){const b=D.frames[k].b;if(!b)continue;st?g.lineTo(X(b[0]),Y(b[1])):g.moveTo(X(b[0]),Y(b[1]));st=true}g.stroke()}
+  // passing lanes from nearest player to the ball
+  let carrier=null;if(f.b){let bd=3;for(const side of['h','a'])for(const p of f[side]){const d=Math.hypot(p[1]-f.b[0],p[2]-f.b[1]);if(d<bd){bd=d;carrier={side,p}}}}
+  if(carrier&&on('oLane')){const opp=f[carrier.side==='h'?'a':'h'];for(const m of f[carrier.side]){if(m[0]===carrier.p[0])continue;
+    const ax=carrier.p[1],ay=carrier.p[2],bx=m[1],by=m[2],L2=(bx-ax)**2+(by-ay)**2;if(L2<16||L2>40*40)continue;let blocked=false;
+    for(const o of opp){const t=Math.max(0,Math.min(1,((o[1]-ax)*(bx-ax)+(o[2]-ay)*(by-ay))/L2)),dx=ax+t*(bx-ax)-o[1],dy=ay+t*(by-ay)-o[2];if(Math.hypot(dx,dy)<2.2){blocked=true;break}}
+    g.strokeStyle=blocked?'rgba(255,80,80,.55)':'rgba(255,255,255,.75)';g.setLineDash(blocked?[3,4]:[]);g.lineWidth=blocked?1:1.6;g.beginPath();g.moveTo(X(ax),Y(ay));g.lineTo(X(bx),Y(by));g.stroke();g.setLineDash([])}}
+  const prev=D.frames[Math.max(0,i-1)];
+  for(const side of['h','a'])for(const p of f[side]){g.fillStyle=col[side];g.beginPath();g.arc(X(p[1]),Y(p[2]),6,0,7);g.fill();g.strokeStyle='#0008';g.lineWidth=1;g.stroke();
+    if(carrier&&carrier.p[0]===p[0]){g.strokeStyle='#ffd166';g.lineWidth=2.5;g.beginPath();g.arc(X(p[1]),Y(p[2]),9,0,7);g.stroke()}
+    if(on('oVel')){const q=prev[side].find(r=>r[0]===p[0]);if(q){g.strokeStyle='#fff';g.lineWidth=1.5;g.beginPath();g.moveTo(X(p[1]),Y(p[2]));g.lineTo(X(p[1]+(p[1]-q[1])*D.meta.hz*.8),Y(p[2]+(p[2]-q[2])*D.meta.hz*.8));g.stroke()}}
+    if(on('oNum')&&D.meta.players&&D.meta.players[p[0]]){g.fillStyle='#fff';g.font='bold 9px system-ui';g.textAlign='center';g.fillText(D.meta.players[p[0]].number,X(p[1]),Y(p[2])+3)}}
+  if(f.b){g.fillStyle='#fff';g.beginPath();g.arc(X(f.b[0]),Y(f.b[1]),4.5,0,7);g.fill();g.strokeStyle='#000';g.lineWidth=1;g.stroke()}
+  const fmt=s=>s?`formation ≈ ${s.form}<br>def line ${(s.defLine*s.d).toFixed(1)} m · length ${s.len.toFixed(1)} m · width ${s.wid.toFixed(1)} m<br>hull ${s.area.toFixed(0)} m²`:'—';
+  $('sh').innerHTML=fmt(sh.h);$('sa').innerHTML=fmt(sh.a);
+  $('sb').innerHTML=carrier?`ball carrier: ${carrier.side==='h'?'home':'away'} #${(D.meta.players&&D.meta.players[carrier.p[0]]||{}).number||carrier.p[0]}`:'ball loose / unknown';
+  const t=f.t;$('clock').textContent=`P${f.p} ${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`;$('seek').value=i}
+function loop(ts){if(!last)last=ts;const dt=(ts-last)/1000;last=ts;if(playing){acc+=dt*D.meta.hz*parseFloat($('spd').value);
+    while(acc>=1){i=(i+1)%D.frames.length;acc-=1}}draw();requestAnimationFrame(loop)}
+$('play').onclick=()=>{playing=!playing;$('play').textContent=playing?'Pause':'Play'};
+$('seek').oninput=e=>{i=+e.target.value;playing=false;$('play').textContent='Play';draw()};
+for(const id of['oLine','oHull','oVel','oLane','oNum','oTrail'])$(id).onchange=draw;
+addEventListener('dragover',e=>e.preventDefault());
+addEventListener('drop',async e=>{e.preventDefault();const f=e.dataTransfer.files[0];if(!f)return;let buf=await f.arrayBuffer();
+  if(f.name.endsWith('.gz')){const ds=new DecompressionStream('gzip');buf=await new Response(new Blob([buf]).stream().pipeThrough(ds)).arrayBuffer()}
+  setData(JSON.parse(new TextDecoder().decode(buf)))});
+setData(D);requestAnimationFrame(loop);
+</script></body></html>

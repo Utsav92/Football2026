@@ -1,0 +1,166 @@
+{
+ "bones": [
+  "hips",
+  "spine",
+  "chest",
+  "neck",
+  "head",
+  "clavicle.L",
+  "upper_arm.L",
+  "forearm.L",
+  "hand.L",
+  "thigh.L",
+  "shin.L",
+  "foot.L",
+  "toe.L",
+  "clavicle.R",
+  "upper_arm.R",
+  "forearm.R",
+  "hand.R",
+  "thigh.R",
+  "shin.R",
+  "foot.R",
+  "toe.R"
+ ],
+ "parents": {
+  "hips": null,
+  "spine": "hips",
+  "chest": "spine",
+  "neck": "chest",
+  "head": "neck",
+  "clavicle.L": "chest",
+  "upper_arm.L": "clavicle.L",
+  "forearm.L": "upper_arm.L",
+  "hand.L": "forearm.L",
+  "thigh.L": "hips",
+  "shin.L": "thigh.L",
+  "foot.L": "shin.L",
+  "toe.L": "foot.L",
+  "clavicle.R": "chest",
+  "upper_arm.R": "clavicle.R",
+  "forearm.R": "upper_arm.R",
+  "hand.R": "forearm.R",
+  "thigh.R": "hips",
+  "shin.R": "thigh.R",
+  "foot.R": "shin.R",
+  "toe.R": "foot.R"
+ },
+ "material_slots": [
+  "skin",
+  "shirt",
+  "shorts",
+  "socks",
+  "boots",
+  "hair"
+ ],
+ "clips": {
+  "idle": {
+   "fps": 30,
+   "frames": 60,
+   "loop": true,
+   "contact_frame": null
+  },
+  "walk": {
+   "fps": 30,
+   "frames": 36,
+   "loop": true,
+   "contact_frame": null
+  },
+  "jog": {
+   "fps": 30,
+   "frames": 24,
+   "loop": true,
+   "contact_frame": null
+  },
+  "sprint": {
+   "fps": 30,
+   "frames": 18,
+   "loop": true,
+   "contact_frame": null
+  },
+  "kick": {
+   "fps": 30,
+   "frames": 14,
+   "loop": false,
+   "contact_frame": 3
+  },
+  "tackle": {
+   "fps": 30,
+   "frames": 24,
+   "loop": false,
+   "contact_frame": 4
+  },
+  "slide": {
+   "fps": 30,
+   "frames": 36,
+   "loop": false,
+   "contact_frame": 10
+  },
+  "fall": {
+   "fps": 30,
+   "frames": 30,
+   "loop": false,
+   "contact_frame": null
+  },
+  "getup": {
+   "fps": 30,
+   "frames": 30,
+   "loop": false,
+   "contact_frame": null
+  },
+  "celebrate": {
+   "fps": 30,
+   "frames": 60,
+   "loop": true,
+   "contact_frame": null
+  },
+  "jump_header": {
+   "fps": 30,
+   "frames": 30,
+   "loop": false,
+   "contact_frame": 15
+  },
+  "gk_ready": {
+   "fps": 30,
+   "frames": 60,
+   "loop": true,
+   "contact_frame": null
+  },
+  "gk_dive_left": {
+   "fps": 30,
+   "frames": 30,
+   "loop": false,
+   "contact_frame": 12
+  },
+  "gk_dive_right": {
+   "fps": 30,
+   "frames": 30,
+   "loop": false,
+   "contact_frame": 12
+  },
+  "gk_catch": {
+   "fps": 30,
+   "frames": 24,
+   "loop": false,
+   "contact_frame": 14
+  },
+  "gk_punch": {
+   "fps": 30,
+   "frames": 24,
+   "loop": false,
+   "contact_frame": 10
+  }
+ },
+ "mesh": {
+  "lod_vertices": {
+   "0": 5808,
+   "1": 1743,
+   "2": 466
+  },
+  "lod0_faces": 5806
+ },
+ "height_m": 1.84,
+ "forward": "-Z (USD)",
+ "up": "Y",
+ "generator": "Tools/blender/make_football_player.py (original, procedural)"
+}

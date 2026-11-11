@@ -1,0 +1,150 @@
+// !$*UTF8*$!
+{
+archiveVersion = 1;
+classes = {};
+objectVersion = 60;
+objects = {
+/* Begin PBXBuildFile section */
+55798C4608EF30D4591F1A79 = {isa = PBXBuildFile; fileRef = 73E2940848D6C934508852F6;};
+2D149988A4264D90A4A9D3A4 = {isa = PBXBuildFile; fileRef = 50448E00A91A36BE649C443F;};
+0D93991086472105A27E7CE7 = {isa = PBXBuildFile; fileRef = 5CE273133F677E32DC260875;};
+32418A5A1BD85EA1B01E37A5 = {isa = PBXBuildFile; fileRef = BE86CF49D61301A4BB8DD439;};
+EDCDF91B1E2D764449CF663A = {isa = PBXBuildFile; fileRef = 04FDEA6973ACCEB591EF5294;};
+8BB60B3B1C44CBABDA0CB923 = {isa = PBXBuildFile; fileRef = D6273E4AD8E3BD117629B692;};
+F4C8A83D8C4F9B1DA23125A6 = {isa = PBXBuildFile; fileRef = 87769EB0E0DC1FFEB9EFC253;};
+EDD123ADD7707F7B8A9F1686 = {isa = PBXBuildFile; fileRef = 0421C0D1882477C4981288FE;};
+CD51B38FE1A2953AA6D25B14 = {isa = PBXBuildFile; fileRef = 36C74DF87FBDB558FA079120;};
+57321A0E695BAA57F9ACD84F = {isa = PBXBuildFile; fileRef = 12A1C30629D6245E04253225;};
+0878C11E5A368137334CD053 = {isa = PBXBuildFile; fileRef = 3767677B00660B52D0BDAFA0;};
+1928FCB8A201FAB01538E49D = {isa = PBXBuildFile; fileRef = 3EAC784CCB96924C2FAE0161;};
+DFBDEF7A8319C3720860F64F = {isa = PBXBuildFile; fileRef = A9A2E3EB1717C9FFF9BFB96A;};
+5021E37C38783B5A49F45A20 = {isa = PBXBuildFile; fileRef = 890F97134F4EDC65A692E5F6;};
+53BC3CAB07D0C32BEE05CDD3 = {isa = PBXBuildFile; fileRef = 6BD7D366ACFDC0254D852F4B;};
+2D130FBCD3D6C55E95518B46 = {isa = PBXBuildFile; fileRef = B036452D304CB1B307813EF4;};
+5CAA5C76111623C6B5EF9236 = {isa = PBXBuildFile; fileRef = 9FDE78D8FEC51F0DB79C80C7;};
+7E404503D4B6BD22919B3930 = {isa = PBXBuildFile; fileRef = 39C4A66D7427918AEAA5A12F;};
+2A834457C645ED5843036DE9 = {isa = PBXBuildFile; fileRef = 16DD07DB69D22844B391DFA3;};
+AD23A0336D1E8CD76235D1B4 = {isa = PBXBuildFile; fileRef = 665A98B49414657A14543C0E;};
+D4AE5034E9C46EC8379DF322 = {isa = PBXBuildFile; fileRef = B3294E1823F39F1414C49889;};
+BA0EAE3CBA49A7ED22F6AE73 = {isa = PBXBuildFile; fileRef = 4E2366F51DA76F2C429D6543;};
+349D29D8596B4BEFB59661A2 = {isa = PBXBuildFile; fileRef = E40F8BB8B875BC6F24A7B48A;};
+9D6C8BD9587116D5DB3417BB = {isa = PBXBuildFile; productRef = 47B0A896F9BBD84735D6FC16;};
+3C93BC063C030631F93A99B2 = {isa = PBXBuildFile; productRef = 9FC2361525098564537AF2E1;};
+A58BF5B4364B0D663B671822 = {isa = PBXBuildFile; productRef = 86B0E175720BC72DB64E9258;};
+E2E0422FC6ACB19B8831CC3D = {isa = PBXBuildFile; productRef = A67D6D91B8D1C5D3525651A6;};
+3F2EB8DF3060A0253FE66976 = {isa = PBXBuildFile; productRef = 964BB548333C23F6AB2BDC19;};
+89B2452BE2CC31366F2DDBB0 = {isa = PBXBuildFile; productRef = 5FAD5FE511E031968E77DB57;};
+D70C55F313245A0D3901DCD7 = {isa = PBXBuildFile; fileRef = AEB1F2C6DC6A8DEFEE4824C2;};
+DDBDF5CD175173F6CA5FA7B1 = {isa = PBXBuildFile; fileRef = F16DCE048D57ED04350404AF;};
+14207198D50AEEAF9591ED44 = {isa = PBXBuildFile; fileRef = F27B424D07BD785F1459212A;};
+CD1F9E472DBABB4EF10B432E = {isa = PBXBuildFile; fileRef = 7DC8F14BBB929F44AB17EEA1;};
+2E574F0B04EDFAA27A0093AA = {isa = PBXBuildFile; fileRef = 975B8989A14839C73EEF9418;};
+EFB2074B71941C13B40FEE75 = {isa = PBXBuildFile; fileRef = C9C88B65AF30D4B332CCB32F;};
+ACC3269AE666C82D04F49747 = {isa = PBXBuildFile; fileRef = 57ECACB30C525C8DCCCE241A;};
+5425085ECC9BA1CB4511011D = {isa = PBXBuildFile; fileRef = 55828BE2E805C6274A6FCCF9;};
+71A751D509AAEDEECC794653 = {isa = PBXBuildFile; fileRef = CD0150D5BD14382BA3F2723D;};
+D6C654F148C103BF71A77BA9 = {isa = PBXBuildFile; fileRef = E6437C34BE5B064E5ECB13F1;};
+8D059EA2D7A6583CB61FD6F9 = {isa = PBXBuildFile; fileRef = F52BAB07EEF8CDAA6D031610;};
+98EE1D83BC530E632F04362A = {isa = PBXBuildFile; fileRef = B1735CEE28343828CE40C8B6;};
+5D3B1EABA5E259EA1C99B4EA = {isa = PBXBuildFile; fileRef = 3EA5FDBCBD9BCEE68460D2DC;};
+DC95779E445E1C3FF76C3885 = {isa = PBXBuildFile; fileRef = A10DD3982BCDF67B857B914F;};
+A71012F230C4C5C15AC17503 = {isa = PBXBuildFile; fileRef = 94551BA117FA793E3F0A27CE;};
+62270D89828D949BBCCF82C2 = {isa = PBXBuildFile; fileRef = 87295466996FB5F433C6461D;};
+65848781138C1EE11A75E411 = {isa = PBXBuildFile; fileRef = BAD9BB768515F43DCBAD097D;};
+06264B36A2396043F6640E81 = {isa = PBXBuildFile; fileRef = C9001927CCB97141787EF842;};
+8586C0288253C3C0D14513CB = {isa = PBXBuildFile; fileRef = 18AD4F49A6B6588E58FC6135;};
+FFBAC5ECE6028B315249FB02 = {isa = PBXBuildFile; fileRef = 61B862F8EDA536827570F463;};
+2BC83A0FDFA6A35DC9DAABA9 = {isa = PBXBuildFile; fileRef = F45C3D437FE09B10F6AB262C;};
+/* End PBXBuildFile section */
+/* Begin PBXFileReference section */
+73E2940848D6C934508852F6 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppRouter.swift"; sourceTree = "<group>";};
+50448E00A91A36BE649C443F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSettings.swift"; sourceTree = "<group>";};
+5CE273133F677E32DC260875 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioSystem.swift"; sourceTree = "<group>";};
+BE86CF49D61301A4BB8DD439 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Football2026App.swift"; sourceTree = "<group>";};
+04FDEA6973ACCEB591EF5294 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameModel.swift"; sourceTree = "<group>";};
+D6273E4AD8E3BD117629B692 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input/GamepadInput.swift"; sourceTree = "<group>";};
+87769EB0E0DC1FFEB9EFC253 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input/KeyboardInput.swift"; sourceTree = "<group>";};
+0421C0D1882477C4981288FE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OffscreenRender.swift"; sourceTree = "<group>";};
+36C74DF87FBDB558FA079120 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendering/CameraRig.swift"; sourceTree = "<group>";};
+12A1C30629D6245E04253225 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendering/CharacterAssets.swift"; sourceTree = "<group>";};
+3767677B00660B52D0BDAFA0 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendering/PitchScene.swift"; sourceTree = "<group>";};
+3EAC784CCB96924C2FAE0161 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendering/PitchTexture.swift"; sourceTree = "<group>";};
+A9A2E3EB1717C9FFF9BFB96A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendering/PlayerRig.swift"; sourceTree = "<group>";};
+890F97134F4EDC65A692E5F6 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendering/SkinnedPlayerRig.swift"; sourceTree = "<group>";};
+6BD7D366ACFDC0254D852F4B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rendering/Stadium.swift"; sourceTree = "<group>";};
+B036452D304CB1B307813EF4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session.swift"; sourceTree = "<group>";};
+9FDE78D8FEC51F0DB79C80C7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI/CareerView.swift"; sourceTree = "<group>";};
+39C4A66D7427918AEAA5A12F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI/Components.swift"; sourceTree = "<group>";};
+16DD07DB69D22844B391DFA3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI/HUDView.swift"; sourceTree = "<group>";};
+665A98B49414657A14543C0E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI/MatchView.swift"; sourceTree = "<group>";};
+B3294E1823F39F1414C49889 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI/Menus.swift"; sourceTree = "<group>";};
+4E2366F51DA76F2C429D6543 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI/RootView.swift"; sourceTree = "<group>";};
+E40F8BB8B875BC6F24A7B48A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI/SettingsView.swift"; sourceTree = "<group>";};
+AEB1F2C6DC6A8DEFEE4824C2 = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_celebrate.usdz"; sourceTree = "<group>";};
+F16DCE048D57ED04350404AF = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_fall.usdz"; sourceTree = "<group>";};
+F27B424D07BD785F1459212A = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_getup.usdz"; sourceTree = "<group>";};
+7DC8F14BBB929F44AB17EEA1 = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_gk_catch.usdz"; sourceTree = "<group>";};
+975B8989A14839C73EEF9418 = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_gk_dive_left.usdz"; sourceTree = "<group>";};
+C9C88B65AF30D4B332CCB32F = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_gk_dive_right.usdz"; sourceTree = "<group>";};
+57ECACB30C525C8DCCCE241A = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_gk_punch.usdz"; sourceTree = "<group>";};
+55828BE2E805C6274A6FCCF9 = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_gk_ready.usdz"; sourceTree = "<group>";};
+CD0150D5BD14382BA3F2723D = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_idle.usdz"; sourceTree = "<group>";};
+E6437C34BE5B064E5ECB13F1 = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_jog.usdz"; sourceTree = "<group>";};
+F52BAB07EEF8CDAA6D031610 = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_jump_header.usdz"; sourceTree = "<group>";};
+B1735CEE28343828CE40C8B6 = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_kick.usdz"; sourceTree = "<group>";};
+3EA5FDBCBD9BCEE68460D2DC = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_slide.usdz"; sourceTree = "<group>";};
+A10DD3982BCDF67B857B914F = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_sprint.usdz"; sourceTree = "<group>";};
+94551BA117FA793E3F0A27CE = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_tackle.usdz"; sourceTree = "<group>";};
+87295466996FB5F433C6461D = {isa = PBXFileReference; lastKnownFileType = file; path = "anim_walk.usdz"; sourceTree = "<group>";};
+BAD9BB768515F43DCBAD097D = {isa = PBXFileReference; lastKnownFileType = file.json; path = "clubs.json"; sourceTree = "<group>";};
+C9001927CCB97141787EF842 = {isa = PBXFileReference; lastKnownFileType = file.json; path = "player.json"; sourceTree = "<group>";};
+18AD4F49A6B6588E58FC6135 = {isa = PBXFileReference; lastKnownFileType = file; path = "player_lod0.usdz"; sourceTree = "<group>";};
+61B862F8EDA536827570F463 = {isa = PBXFileReference; lastKnownFileType = file; path = "player_lod1.usdz"; sourceTree = "<group>";};
+F45C3D437FE09B10F6AB262C = {isa = PBXFileReference; lastKnownFileType = file; path = "player_lod2.usdz"; sourceTree = "<group>";};
+D2A57DC1D883FD21FB995169 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Football2026.app; sourceTree = BUILT_PRODUCTS_DIR;};
+/* End PBXFileReference section */
+/* Begin PBXFrameworksBuildPhase section */
+26AA928B2EE893EE7721F35F = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (9D6C8BD9587116D5DB3417BB,3C93BC063C030631F93A99B2,A58BF5B4364B0D663B671822,E2E0422FC6ACB19B8831CC3D,3F2EB8DF3060A0253FE66976,89B2452BE2CC31366F2DDBB0); runOnlyForDeploymentPostprocessing = 0;};
+/* End PBXFrameworksBuildPhase section */
+/* Begin PBXGroup section */
+FAD58DE7366495DB4650CFEF = {isa = PBXGroup; children = (AAE3C71672121C2397F9F81F, 210B20EF175C51B8421CAAF5, D6E4A9B6646C62FC48BAA6DD); sourceTree = "<group>";};
+D6E4A9B6646C62FC48BAA6DD = {isa = PBXGroup; children = (D2A57DC1D883FD21FB995169); name = Products; sourceTree = "<group>";};
+AAE3C71672121C2397F9F81F = {isa = PBXGroup; children = (73E2940848D6C934508852F6,50448E00A91A36BE649C443F,5CE273133F677E32DC260875,BE86CF49D61301A4BB8DD439,04FDEA6973ACCEB591EF5294,D6273E4AD8E3BD117629B692,87769EB0E0DC1FFEB9EFC253,0421C0D1882477C4981288FE,36C74DF87FBDB558FA079120,12A1C30629D6245E04253225,3767677B00660B52D0BDAFA0,3EAC784CCB96924C2FAE0161,A9A2E3EB1717C9FFF9BFB96A,890F97134F4EDC65A692E5F6,6BD7D366ACFDC0254D852F4B,B036452D304CB1B307813EF4,9FDE78D8FEC51F0DB79C80C7,39C4A66D7427918AEAA5A12F,16DD07DB69D22844B391DFA3,665A98B49414657A14543C0E,B3294E1823F39F1414C49889,4E2366F51DA76F2C429D6543,E40F8BB8B875BC6F24A7B48A); path = App; sourceTree = "<group>";};
+210B20EF175C51B8421CAAF5 = {isa = PBXGroup; children = (AEB1F2C6DC6A8DEFEE4824C2,F16DCE048D57ED04350404AF,F27B424D07BD785F1459212A,7DC8F14BBB929F44AB17EEA1,975B8989A14839C73EEF9418,C9C88B65AF30D4B332CCB32F,57ECACB30C525C8DCCCE241A,55828BE2E805C6274A6FCCF9,CD0150D5BD14382BA3F2723D,E6437C34BE5B064E5ECB13F1,F52BAB07EEF8CDAA6D031610,B1735CEE28343828CE40C8B6,3EA5FDBCBD9BCEE68460D2DC,A10DD3982BCDF67B857B914F,94551BA117FA793E3F0A27CE,87295466996FB5F433C6461D,BAD9BB768515F43DCBAD097D,C9001927CCB97141787EF842,18AD4F49A6B6588E58FC6135,61B862F8EDA536827570F463,F45C3D437FE09B10F6AB262C); name = Bundle; path = Assets/Bundle; sourceTree = "<group>";};
+/* End PBXGroup section */
+/* Begin PBXNativeTarget section */
+058DE92451763E137316DF3A = {isa = PBXNativeTarget; buildConfigurationList = B3E99C95820A695EF3C00378; buildPhases = (9BE68CF82B5621C7A465F3D7, 26AA928B2EE893EE7721F35F, BD86BCED84FB3AEF951FB07D); buildRules = (); dependencies = (); name = Football2026; packageProductDependencies = (47B0A896F9BBD84735D6FC16,9FC2361525098564537AF2E1,86B0E175720BC72DB64E9258,A67D6D91B8D1C5D3525651A6,964BB548333C23F6AB2BDC19,5FAD5FE511E031968E77DB57); productName = Football2026; productReference = D2A57DC1D883FD21FB995169; productType = "com.apple.product-type.application";};
+/* End PBXNativeTarget section */
+/* Begin PBXProject section */
+4DC844ABCCFC0D132D087C1C = {isa = PBXProject; attributes = {LastUpgradeCheck = 2700;}; buildConfigurationList = 1A0ABDB1258088E584FB0BB6; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = FAD58DE7366495DB4650CFEF; packageReferences = (A97F3A2CE0A2D21A1F5A2227); productRefGroup = D6E4A9B6646C62FC48BAA6DD; projectDirPath = ""; projectRoot = ""; targets = (058DE92451763E137316DF3A);};
+/* End PBXProject section */
+/* Begin PBXResourcesBuildPhase section */
+BD86BCED84FB3AEF951FB07D = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (D70C55F313245A0D3901DCD7,DDBDF5CD175173F6CA5FA7B1,14207198D50AEEAF9591ED44,CD1F9E472DBABB4EF10B432E,2E574F0B04EDFAA27A0093AA,EFB2074B71941C13B40FEE75,ACC3269AE666C82D04F49747,5425085ECC9BA1CB4511011D,71A751D509AAEDEECC794653,D6C654F148C103BF71A77BA9,8D059EA2D7A6583CB61FD6F9,98EE1D83BC530E632F04362A,5D3B1EABA5E259EA1C99B4EA,DC95779E445E1C3FF76C3885,A71012F230C4C5C15AC17503,62270D89828D949BBCCF82C2,65848781138C1EE11A75E411,06264B36A2396043F6640E81,8586C0288253C3C0D14513CB,FFBAC5ECE6028B315249FB02,2BC83A0FDFA6A35DC9DAABA9); runOnlyForDeploymentPostprocessing = 0;};
+/* End PBXResourcesBuildPhase section */
+/* Begin PBXSourcesBuildPhase section */
+9BE68CF82B5621C7A465F3D7 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (55798C4608EF30D4591F1A79,2D149988A4264D90A4A9D3A4,0D93991086472105A27E7CE7,32418A5A1BD85EA1B01E37A5,EDCDF91B1E2D764449CF663A,8BB60B3B1C44CBABDA0CB923,F4C8A83D8C4F9B1DA23125A6,EDD123ADD7707F7B8A9F1686,CD51B38FE1A2953AA6D25B14,57321A0E695BAA57F9ACD84F,0878C11E5A368137334CD053,1928FCB8A201FAB01538E49D,DFBDEF7A8319C3720860F64F,5021E37C38783B5A49F45A20,53BC3CAB07D0C32BEE05CDD3,2D130FBCD3D6C55E95518B46,5CAA5C76111623C6B5EF9236,7E404503D4B6BD22919B3930,2A834457C645ED5843036DE9,AD23A0336D1E8CD76235D1B4,D4AE5034E9C46EC8379DF322,BA0EAE3CBA49A7ED22F6AE73,349D29D8596B4BEFB59661A2); runOnlyForDeploymentPostprocessing = 0;};
+/* End PBXSourcesBuildPhase section */
+/* Begin XCBuildConfiguration section */
+BDBC475092EF64D21C5DE60B = {isa = XCBuildConfiguration; buildSettings = {SWIFT_VERSION = 5.0; ONLY_ACTIVE_ARCH = NO; CLANG_ENABLE_MODULES = YES; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; MTL_ENABLE_DEBUG_INFO = YES;}; name = Debug;};
+80D34FDBFC214A62DA2B7427 = {isa = XCBuildConfiguration; buildSettings = {SWIFT_VERSION = 5.0; ONLY_ACTIVE_ARCH = NO; CLANG_ENABLE_MODULES = YES; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_COMPILATION_MODE = wholemodule;}; name = Release;};
+40EE942D4E7DF005E21C0771 = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_NAME = "$(TARGET_NAME)"; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "Football 2026"; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1; SDKROOT = macosx; MACOSX_DEPLOYMENT_TARGET = 15.0; INFOPLIST_KEY_NSPrincipalClass = NSApplication; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports-games"; PRODUCT_BUNDLE_IDENTIFIER = com.utsav.Football2026; CODE_SIGN_IDENTITY = "-"; CODE_SIGN_STYLE = Manual; ENABLE_HARDENED_RUNTIME = NO;}; name = Debug;};
+29B64A418306CC02D181FEE4 = {isa = XCBuildConfiguration; buildSettings = {PRODUCT_NAME = "$(TARGET_NAME)"; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "Football 2026"; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1; SDKROOT = macosx; MACOSX_DEPLOYMENT_TARGET = 15.0; INFOPLIST_KEY_NSPrincipalClass = NSApplication; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports-games"; PRODUCT_BUNDLE_IDENTIFIER = com.utsav.Football2026; CODE_SIGN_IDENTITY = "-"; CODE_SIGN_STYLE = Manual; ENABLE_HARDENED_RUNTIME = NO;}; name = Release;};
+/* End XCBuildConfiguration section */
+/* Begin XCConfigurationList section */
+1A0ABDB1258088E584FB0BB6 = {isa = XCConfigurationList; buildConfigurations = (BDBC475092EF64D21C5DE60B, 80D34FDBFC214A62DA2B7427); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+B3E99C95820A695EF3C00378 = {isa = XCConfigurationList; buildConfigurations = (40EE942D4E7DF005E21C0771, 29B64A418306CC02D181FEE4); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+/* End XCConfigurationList section */
+/* Begin XCLocalSwiftPackageReference section */
+A97F3A2CE0A2D21A1F5A2227 = {isa = XCLocalSwiftPackageReference; relativePath = Packages/FootballKit;};
+/* End XCLocalSwiftPackageReference section */
+/* Begin XCSwiftPackageProductDependency section */
+47B0A896F9BBD84735D6FC16 = {isa = XCSwiftPackageProductDependency; productName = FootballPhysics;};
+9FC2361525098564537AF2E1 = {isa = XCSwiftPackageProductDependency; productName = FootballGame;};
+86B0E175720BC72DB64E9258 = {isa = XCSwiftPackageProductDependency; productName = FootballData;};
+A67D6D91B8D1C5D3525651A6 = {isa = XCSwiftPackageProductDependency; productName = FootballModes;};
+964BB548333C23F6AB2BDC19 = {isa = XCSwiftPackageProductDependency; productName = FootballInput;};
+5FAD5FE511E031968E77DB57 = {isa = XCSwiftPackageProductDependency; productName = FootballAudio;};
+/* End XCSwiftPackageProductDependency section */
+};
+rootObject = 4DC844ABCCFC0D132D087C1C;
+}
